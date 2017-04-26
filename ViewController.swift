@@ -15,6 +15,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     var xa:Int = 0
     var xb:Int = 0
+    var xaa:Int = 0
+    var xbb:Int = 0
     var dlg=0
     var flagA=0
     var flagB=0
@@ -32,10 +34,21 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBOutlet weak var Aimage: UIImageView!
     @IBOutlet weak var Bimage: UIImageView!
     
+  
+    
+    @IBOutlet weak var game: UITextField!
     
     
+    @IBOutlet weak var Aleft: UITextField!
+   
+    @IBOutlet weak var Aright: UITextField!
     
+    @IBOutlet weak var Bleft: UITextField!
+    
+    @IBOutlet weak var Bright: UITextField!
     @IBAction func Aphoto(_ sender: Any) {
+    
+    
         if dlg==0{
             flagA=1
             flagB=0
@@ -85,10 +98,215 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
     
     
-    @IBAction func Aget(_ sender: Any) {}
-        
-    
-    
-    
-        
+    @IBAction func Aget(_ sender: Any) {
+        if dlg==1{
+            del=1
+            if game.text != "Game Over"{
+                A.textAlignment = .center
+                xa=xa+1
+                if xa>=21{
+                    let xaa=xa-2
+                    if xaa >= xb{
+                        A.text="胜利"
+                        B.text="失败"
+                        Bleft.text=""
+                        Bright.text=""
+                        Aleft.text=""
+                        Aright.text=""
+                        game.text="Game Over"
+                        
+                    }
+                    else{
+                        if xa>xb{
+                            if xa==30{
+                                A.text="胜利"
+                                B.text="失败"
+                                Bleft.text=""
+                                Bright.text=""
+                                Aleft.text=""
+                                Aright.text=""
+                                game.text="Game Over"
+                            }
+                           else{
+                                A.text="\(xa)"
+                                if xa%2 != 0{
+                                    Aleft.text="\("发球")"
+                                    Aright.text=""
+                                    Bleft.text=""
+                                    Bright.text=""
+                                }
+                                else{
+                                    Aleft.text=""
+                                    Aright.text="\("发球")"
+                                    Bleft.text=""
+                                    Bright.text=""
+
+                                }
+                            }
+                        }
+                        else{
+                            A.text="\(xa)"
+                            if xa%2 != 0{
+                                Aleft.text="\("发球")"
+                                Aright.text=""
+                                Bleft.text=""
+                                Bright.text=""
+                            }
+                            else{
+                                Aleft.text=""
+                                Aright.text="\("发球")"
+                                Bleft.text=""
+                                Bright.text=""
+                                
+                            }
+
+                      
+                    
+                    }
+                    
+                }
+            }
+                else {
+                    A.text="\(xa)"
+                    if xa%2 != 0{
+                        Aleft.text="\("发球")"
+                        Aright.text=""
+                        Bleft.text=""
+                        Bright.text=""
+                    }
+                    else{
+                        Aleft.text=""
+                        Aright.text="\("发球")"
+                        Bleft.text=""
+                        Bright.text=""
+                        
+                    }
+                }
+            }
+        }
+    }
+   
+
+    @IBAction func Bget(_ sender: Any) {
+        if dlg==1{
+            del=2
+            if game.text != "Game Over"{
+                B.textAlignment = .center
+                xb=xb+1
+                if xb>=21{
+                    let xbb=xb-2
+                    if xbb >= xa{
+                        B.text="胜利"
+                        A.text="失败"
+                        Bleft.text=""
+                        Bright.text=""
+                        Aleft.text=""
+                        Aright.text=""
+                        game.text="Game Over"
+                        
+                    }
+                    else{
+                        if xb>xa{
+                            if xb==30{
+                                B.text="胜利"
+                                A.text="失败"
+                                Bleft.text=""
+                                Bright.text=""
+                                Aleft.text=""
+                                Aright.text=""
+                                game.text="Game Over"
+                            }
+                            else{
+                                B.text="\(xb)"
+                                if xb%2 != 0{
+                                    Aleft.text=""
+                                    Aright.text=""
+                                    Bleft.text="\("发球")"
+                                    Bright.text=""
+                                }
+                                else{
+                                    Aleft.text=""
+                                    Aright.text=""
+                                    Bleft.text=""
+                                    Bright.text="\("发球")"
+                                    
+                                }
+                            }
+                        }
+                        else{
+                            B.text="\(xb)"
+                            if xb%2 != 0{
+                                Aleft.text=""
+                                Aright.text=""
+                                Bleft.text="\("发球")"
+                                Bright.text=""
+                            }
+                            else{
+                                Aleft.text=""
+                                Aright.text=""
+                                Bleft.text=""
+                                Bright.text="\("发球")"
+                                
+                            }
+                            
+                            
+                            
+                        }
+                        
+                    }
+                }
+                else {
+                    B.text="\(xb)"
+                    if xb%2 != 0{
+                        Aleft.text=""
+                        Aright.text=""
+                        Bleft.text="\("发球")"
+                        Bright.text=""
+                    }
+                    else{
+                        Aleft.text=""
+                        Aright.text=""
+                        Bleft.text=""
+                        Bright.text="\("发球")"
+                        
+                    }
+                }
+            }
+        }
+
+    }
+
+    @IBAction func start(_ sender: Any) {
+        if Bimage.image != nil && Aimage.image != nil {
+            if dlg==0{
+                dlg=1
+                if xa==0{
+                    if xb==0{
+                        A.textAlignment = .center
+                        B.textAlignment = .center
+                        bi.textAlignment = .center
+                        vs.textAlignment = .center
+                        Bleft.textAlignment = .center
+                        Bright.textAlignment = .center
+                        Aleft.textAlignment = .center
+                        Aright.textAlignment = .center
+                        game.textAlignment = .center
+                        bi.text = ":"
+                        A.text = "0"
+                        B.text = "0"
+                        vs.text = "VS"
+                        game.text = ""
+                        let temp = Int(arc4random()%100)+1
+                        if temp%2==0{
+                            Bright.text="\("发球")"
+                        }
+                        else{
+                            Aright.text="\("发球")"
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
 }
