@@ -101,11 +101,17 @@
                                 <rect key="frame" x="146" y="318" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="结束比赛"/>
+                                <connections>
+                                    <action selector="close:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d9d-Cu-62b"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klZ-Tr-8I0">
                                 <rect key="frame" x="303" y="361" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="撤销"/>
+                                <connections>
+                                    <action selector="dele:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2yZ-TW-Prh"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="place.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fcK-FS-AHS">
                                 <rect key="frame" x="57" y="410" width="284" height="185"/>

@@ -308,5 +308,75 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                 }
             }
         }
+        else{
+            if Aimage.image == nil && Bimage.image != nil {
+                let alertController = UIAlertController(title:"系统提示",
+                                                        message:"请先上传选手A照片：\n",
+                                                        preferredStyle:. alert)
+                
+                
+                //显示显示框
+                self.present(alertController,animated: true,completion: nil)
+                let okAction = UIAlertAction(title: "",style: .default,handler:{
+                    action in
+                    print("")
+                })
+                alertController.addAction(okAction)
+                //5秒钟后自动消失
+                DispatchQueue.main.asyncAfter(deadline:DispatchTime.now() + 5) {
+                    self.presentedViewController?.dismiss(animated: false, completion: nil)
+                }
+            }
+        }
     }
+    
+    @IBAction func dele(_ sender: Any) {
+        if dlg==1{
+            if game.text==""{
+                if del==1{
+                    if xa>=1{
+                        xa=xa-1
+                        A.text="\(xa)"
+                        del=0
+                    }
+                }
+                else if del==2{
+                    if xb>=1{
+                        xb=xb-1
+                        B.text="\(xb)"
+                        del=0
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    @IBAction func close(_ sender: Any) {
+        if dlg==1{
+            if game.text=="Game Over"{
+                A.text=""
+                B.text=""
+                bi.text = ""
+                vs.text = ""
+                dlg=0
+                Bleft.text=""
+                Bright.text=""
+                Aleft.text=""
+                Aright.text=""
+                game.text=""
+                Bimage.image=nil
+                Aimage.image=nil
+                xa=0
+                xb=0
+                flagA=0
+                flagB=0
+                
+            }
+        }
+    }
+    
+    
+    
+    
 }
