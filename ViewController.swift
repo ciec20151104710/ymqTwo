@@ -21,6 +21,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     var flagA=0
     var flagB=0
     var del=0
+    var aa = 0
+    var bb = 0
+    
     
     @IBOutlet weak var bi: UITextField!
     
@@ -47,7 +50,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     @IBOutlet weak var Bright: UITextField!
     
+    @IBOutlet weak var Aall: UITextField!
     
+    @IBOutlet weak var Ball: UITextField!
     
     @IBAction func Aphoto(_ sender: Any) {
     
@@ -112,11 +117,24 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                     if xaa >= xb{
                         A.text="胜利"
                         B.text="失败"
+                        aa = aa + 1
+                        Aall.text = "\(aa)"
+                        xa = 0
+                        xb = 0
                         Bleft.text=""
                         Bright.text=""
                         Aleft.text=""
                         Aright.text=""
-                        game.text="Game Over"
+                        if aa == 2{
+                            game.text="Game Over"
+                            xa = 0
+                            A.text = ""
+                            xb = 0
+                            B.text = ""
+                           
+                            
+                        }
+
                         
                     }
                     else{
@@ -124,11 +142,23 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                             if xa==30{
                                 A.text="胜利"
                                 B.text="失败"
+                                aa = aa + 1
+                                Aall.text = "\(aa)"
                                 Bleft.text=""
                                 Bright.text=""
                                 Aleft.text=""
                                 Aright.text=""
-                                game.text="Game Over"
+                                if aa == 2{
+                                    game.text="Game Over"
+                                    xa = 0
+                                    A.text = ""
+                                    xb = 0
+                                    B.text = ""
+                                    aa = 0
+                                    bb = 0
+
+                                }
+
                             }
                            else{
                                 A.text="\(xa)"
@@ -201,11 +231,24 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                     if xbb >= xa{
                         B.text="胜利"
                         A.text="失败"
+                        bb = bb + 1
+                        Ball.text = "\(bb)"
+                        xa = 0
+                        xb = 0
                         Bleft.text=""
                         Bright.text=""
                         Aleft.text=""
                         Aright.text=""
-                        game.text="Game Over"
+                        if bb == 2{
+                            game.text="Game Over"
+                            xb = 0
+                            A.text = ""
+                            xb = 0
+                            B.text = ""
+                            
+
+                        }
+                      
                         
                     }
                     else{
@@ -213,11 +256,23 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                             if xb==30{
                                 B.text="胜利"
                                 A.text="失败"
+                                bb = bb + 1
+                                Ball.text = "\(bb)"
                                 Bleft.text=""
                                 Bright.text=""
                                 Aleft.text=""
                                 Aright.text=""
-                                game.text="Game Over"
+                                if bb == 2{
+                                    game.text="Game Over"
+                                    xb = 0
+                                    A.text = ""
+                                    xb = 0
+                                    B.text = ""
+                                    aa = 0
+                                    bb = 0
+
+                                }
+
                             }
                             else{
                                 B.text="\(xb)"
@@ -280,6 +335,12 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
 
     @IBAction func start(_ sender: Any) {
+        xb = 0
+        A.text = ""
+        xb = 0
+        B.text = ""
+        
+        
         if Bimage.image != nil && Aimage.image != nil {
             if dlg==0{
                 dlg=1
