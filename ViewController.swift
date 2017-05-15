@@ -46,6 +46,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBOutlet weak var Bleft: UITextField!
     
     @IBOutlet weak var Bright: UITextField!
+    
+    
+    
     @IBAction func Aphoto(_ sender: Any) {
     
     
@@ -69,8 +72,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     @IBAction func Bphoto(_ sender: Any) {
         if dlg==0{
-            flagA=1
-            flagB=0
+            flagA=0
+            flagB=1
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary)//初始化图片控制器
             {
                 let picker = UIImagePickerController()//设置代理
