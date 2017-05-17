@@ -435,7 +435,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                 xb=0
                 flagA=0
                 flagB=0
-                
+                Aall.text=""
+                Ball.text=""
             }
         }
     }
