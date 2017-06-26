@@ -9,6 +9,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controllerfirst-->
+        <scene sceneID="flA-uL-nUb">
+            <objects>
+                <viewController id="pRZ-QN-BUM" customClass="ViewControllerfirst" customModule="ymqTwo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pk8-Cu-fWI"/>
+                        <viewControllerLayoutGuide type="bottom" id="kRI-kO-pOq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gjH-2R-Yd1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Okx-o6-MkS">
+                                <rect key="frame" x="122" y="166" width="131" height="114"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="羽毛球计分器"/>
+                                <connections>
+                                    <action selector="one:" destination="pRZ-QN-BUM" eventType="touchUpInside" id="1y9-mx-Q0t"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="vKB-T9-2nr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LpN-CZ-MK4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1010.4" y="147.97601199400302"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -203,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="-380" y="148"/>
         </scene>
     </scenes>
     <resources>
